@@ -1,4 +1,4 @@
-SELECT customer_name AS "Customer", PRINTF("$%5.f.00", sum(unpaid.totaldue)) AS "Amount Due"
+SELECT customer_name AS "Customer", PRINTF("$%3.f.00", sum(unpaid.totaldue)) AS "Amount Due"
 FROM customers
 C JOIN(
 SELECT orders.customer_id, subscriptions.price_per_month*subscriptions.subscription_length as totaldue,
